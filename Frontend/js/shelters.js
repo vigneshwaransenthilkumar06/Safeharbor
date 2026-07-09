@@ -96,8 +96,18 @@ async function changeOccupancy(id, change) {
     showSuccess("Occupancy Updated");
     loadShelters();
   } catch (error) {
-    showError(error.response ? error.response.data : "Unable to Update Occupancy");
-  }
+    console.log(error);
+    console.log(error.response);
+
+    if (error.response) {
+        alert(
+            "Status: " + error.response.status +
+            "\nMessage: " + JSON.stringify(error.response.data)
+        );
+    } else {
+        alert(error.message);
+    }
+}
 }
 
 async function deleteShelter(id) {

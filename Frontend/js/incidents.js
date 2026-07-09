@@ -68,25 +68,24 @@ async function reportIncident(event) {
 }
 
 async function assignResponder(id) {
-  let responderName = prompt("Enter responder name/username:");
-  if (!responderName) {
-    return;
-  }
+    let responderName = prompt("Enter responder name:");
 
-  try {
-    await axios.patch(
-      API_URL + "/incidents/" + id + "/assign?responderName=" + responderName,
-      {},
-      { headers: getHeaders() }
-    );
+    if (!responderName) return;
 
-    showSuccess("Responder Assigned");
-    loadIncidents();
-  } catch (error) {
-    showError(error.response ? error.response.data : "Unable to Assign Responder");
-  }
+    try {
+        await axios.patch(
+            API_URL + "/incidents/" + id + "/assign?responderName=" + encodeURIComponent(responderName),
+            {},
+            { headers: getHeaders() }
+        );
+
+        showSuccess("Responder Assigned");
+        loadIncidents();
+
+    } catch (error) {
+        showError(error.response ? error.response.data : "Unable to Assign Responder");
+    }
 }
-
 async function resolveIncident(id) {
   try {
     await axios.patch(
