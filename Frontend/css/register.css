@@ -1,0 +1,22 @@
+body{
+    background-color:#f4f6f9;
+}
+
+.form-box{
+    max-width:600px;
+    margin:auto;
+    border-radius:10px;
+}
+
+h3{
+    color:#b30000;
+    font-weight:bold;
+}
+
+.form-label{
+    font-weight:500;
+}
+
+.btn{
+    min-width:120px;
+}

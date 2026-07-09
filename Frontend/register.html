@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - SafeHarbor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/register.css">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="card shadow p-4 form-box">
+            <h3 class="text-center mb-4">Register New Personnel</h3>
+            <form id="registerForm">
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="username" placeholder="Enter Username" required>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Enter Password" required>
+                </div>
+                <div class="mb-3">
+                    <label for="fullName" class="form-label">Full Name</label>
+                    <input type="text" class="form-control" id="fullName" placeholder="Enter Full Name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="role" class="form-label">Role</label>
+                    <select class="form-select" id="role" required>
+                        <option value="RESPONDER">Field Responder</option>
+                        <option value="ADMIN">Admin</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="phoneNumber" class="form-label">Phone Number</label>
+                    <input type="tel" class="form-control" id="phoneNumber" placeholder="Enter Phone Number">
+                </div>
+                <div class="mb-4">
+                    <label for="region" class="form-label">Assigned Region</label>
+                    <input type="text" class="form-control" id="region" placeholder="Enter Region">
+                </div>
+                <button type="submit" class="btn btn-primary me-2">
+                    Register
+                </button>
+                <a href="login.html" class="btn btn-secondary">
+                    Back to Login
+                </a>
+            </form>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/register.js"></script>
+</body>
+</html>
